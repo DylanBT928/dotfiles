@@ -43,8 +43,8 @@ return {
                 "stylua", -- lua formatter
                 "isort", -- python formatter
                 "black", -- python formatter
-                "pylint",
-                "eslint_d",
+                "pylint", -- linter for Python
+                "eslint_d", -- linter for JavaScript/TypeScript
                 "clang-format", -- C/C++ formatter
                 "cpplint", -- C/C++ linter
             },
