@@ -6,3 +6,4 @@ This repository contains my personal configuration files.
 | ------ | -------------- |
 | Kitty  | [kitty](kitty) |
 | Neovim | [nvim](nvim)   |
+| Fish   | [fish](fish)   |
