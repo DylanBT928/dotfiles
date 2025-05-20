@@ -26,6 +26,6 @@ if status is-interactive
     echo ""
 
     # Oh My Posh
-    oh-my-posh init fish --config ~/.poshthemes/takuya.omp.json | source
+    oh-my-posh init fish --config ~/.config/fish/poshthemes/takuya.omp.json | source
 end
 

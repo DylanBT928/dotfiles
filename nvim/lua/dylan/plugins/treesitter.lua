@@ -15,7 +15,7 @@ return {
                 enable = true,
             },
             -- enable indentation
-            indent = { enable = true },
+            indent = { enable = true, disable = { "c", "cpp" } },
             -- enable autotagging (w/ nvim-ts-autotag plugin)
             autotag = {
                 enable = true,
@@ -44,16 +44,16 @@ return {
                 "c",
                 "cpp",
                 "python",
+            },
+            incremental_selection = {
+                enable = true,
+                keymaps = {
+                    init_selection = "<C-space>",
+                    node_incremental = "<C-space>",
+                    scope_incremental = false,
+                    node_decremental = "<bs>",
                 },
-                incremental_selection = {
-                    enable = true,
-                    keymaps = {
-                        init_selection = "<C-space>",
-                        node_incremental = "<C-space>",
-                        scope_incremental = false,
-                        node_decremental = "<bs>",
-                    },
-                },
-            })
+            },
+        })
     end,
 }
