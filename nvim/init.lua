@@ -1,2 +1,1 @@
-require("dylan.core")
-require("dylan.lazy")
+require("config.lazy")
