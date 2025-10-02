@@ -1,28 +1,29 @@
 return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = {
-      ensure_installed = {
-        "javascript",
-        "typescript",
-        "css",
-        "gitignore",
-        "graphql",
-        "http",
-        "json",
-        "scss",
-        "sql",
-        "vim",
-        "lua",
-        "c",
-        "cpp",
-        "python",
-      },
-      query_linter = {
-        enable = true,
-        use_virtual_text = true,
-        lint_events = { "BufWrite", "CursorHold" },
-      },
-    },
-  },
+	"nvim-treesitter/nvim-treesitter",
+	build = ":TSUpdate",
+	config = function(_, opts)
+		require("nvim-treesitter.configs").setup(opts)
+	end,
+	opts = {
+		ensure_installed = {
+			"cpp",
+			"c",
+			"bash",
+			"cmake",
+			"make",
+			"lua",
+			"python",
+			"json",
+			"yaml",
+			"gitignore",
+			"glsl",
+			"hlsl",
+		},
+		highlight = {
+			enable = true,
+		},
+		indent = {
+			enable = true,
+		},
+	},
 }

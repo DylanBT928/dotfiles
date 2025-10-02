@@ -1,11 +1,9 @@
 return {
-  {
-    "sainnhe/sonokai",
-    priority = 1000,
-    config = function()
-      vim.g.sonokai_style = "andromeda"
-      vim.g.sonokai_enable_italic = "1"
-      vim.cmd.colorscheme("sonokai")
-    end,
-  },
+	"rebelot/kanagawa.nvim",
+	name = "kanagawa",
+	priority = 1000,
+	config = function()
+		vim.cmd("colorscheme kanagawa")
+		vim.api.nvim_set_hl(0, "LineNr", { fg = "#7c6756" })
+	end,
 }
