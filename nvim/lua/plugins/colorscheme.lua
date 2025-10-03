@@ -1,9 +1,9 @@
 return {
-	"rebelot/kanagawa.nvim",
-	name = "kanagawa",
+	"sainnhe/sonokai",
+	name = "sonokai",
 	priority = 1000,
 	config = function()
-		vim.cmd("colorscheme kanagawa")
+		vim.cmd("colorscheme sonokai")
 		vim.api.nvim_set_hl(0, "LineNr", { fg = "#7c6756" })
 	end,
 }

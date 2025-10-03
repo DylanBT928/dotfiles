@@ -36,13 +36,23 @@ return {
 		db.setup({
 			theme = "doom",
 			config = {
-				header = with_padding(art, 8, 3),
+				header = with_padding(art, 12, 1),
 				center = {
-					{ icon = "  ", desc = "new file", key = "n", action = "ene" },
-					{ icon = "  ", desc = "find file", key = "f", action = "Telescope find_files" },
-					{ icon = "󰈭  ", desc = "find text", key = "r", action = "Telescope live_grep" },
-					{ icon = "󰒲  ", desc = "lazy", key = "l", action = "Lazy" },
-					{ icon = "󰩈  ", desc = "quit", key = "q", action = "qa" },
+					{ icon = "  ", desc = "find file", key = "f", action = ":lua Snacks.dashboard.pick('files')" },
+					{
+						icon = "  ",
+						desc = "find text",
+						key = "r",
+						action = ":lua Snacks.dashboard.pick('live_grep')",
+					},
+					{
+						icon = "  ",
+						key = "c",
+						desc = "config",
+						action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+					},
+					{ icon = "󰒲  ", desc = "lazy", key = "l", action = ":Lazy" },
+					{ icon = "  ", desc = "quit", key = "q", action = ":qa" },
 				},
 
 				footer = function()
