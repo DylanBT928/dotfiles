@@ -92,7 +92,7 @@ return {
 			desc = "Find File",
 		},
 		{
-			"<leader>r",
+			";r",
 			function()
 				Snacks.dashboard.pick("live_grep")
 			end,
