@@ -1,7 +1,7 @@
 set fish_greeting ""
 
 if status is-interactive
-    oh-my-posh init fish --config ~/.config/fish/poshthemes/takuya.omp.json | source
+    oh-my-posh init fish --config ~/.config/fish/poshthemes/robbyrussell.omp.json | source
 
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
