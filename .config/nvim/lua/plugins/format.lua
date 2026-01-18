@@ -14,7 +14,7 @@ return {
 			cmake = { "cmake_format" },
 			json = { "prettier" },
 			yaml = { "prettier" },
-			lua = { "stylua" },
+			lua = { "stylua" }
 		},
 		formatters = {
 			shfmt = { prepend_args = { "-i", "2", "-ci" } },

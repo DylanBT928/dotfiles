@@ -9,4 +9,6 @@ if status is-interactive
     alias n='nvim'
     alias ff='fastfetch'
     alias ponysay='env PYTHONWARNINGS=ignore ponysay'
+    # alias mars='_JAVA_OPTIONS="-Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel" mars-mips nc'
+    alias mars='java -Dswing.defaultlaf=javax.swing.plaf.metal.MetalLookAndFeel -jar /usr/share/java/mars-mips/Mars.jar sm nc'
 end
