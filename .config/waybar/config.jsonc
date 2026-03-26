@@ -1,54 +1,75 @@
 {
-  "layer": "top",
-  "position": "top",
-  "height": 40,
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["hyprland/window"],
-  "modules-right": ["cpu", "memory", "pulseaudio", "network", "custom/clock-icon", "clock"],
+    "layer": "top",
+    "position": "top",
+    "height": 24,
 
-"hyprland/workspaces": {
-	"format": "{icon}",
-	"format-icons": {
-		"active": "",
-		"default": ""
-	}
-},
+    "margin-top": 10,
+    "margin-left": 200,
+    "margin-right": 200,
 
-"hyprland/window": {
-	"format": "{}"
-},
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["cpu", "memory", "pulseaudio", "custom/clock-icon","clock"],
 
-"custom/clock-icon": {
-  "format": ""
-},
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{icon}",
+        "format-icons": {
+            "1": "one",
+            "2": "two",
+            "3": "three",
+            "4": "four",
+            "5": "five",
+            "6": "six",
+            "7": "seven",
+            "8": "eight",
+            "9": "nine",
+            "10": "ten"
+        }
+    },
 
-"clock": {
-  "format": "{:%a %b %d | %I:%M:%S %p}",
-  "tooltip-format": "{:%A, %B %d, %Y | %I:%M:%S %p}",
-  "tooltip": true,
-  "interval": 1
-},
+    "hyprland/window": {
+	    "format": "{}"
+    },
 
-  "cpu": {
-    "format": "  {usage}%",
-    "tooltip": true
-  },
+    "cpu": {
+        "format": "  {usage}%",
+        "tooltip": true,
+    },
 
-  "memory": {
-    "format": "  {used:0.1f}G",
-    "tooltip": true
-  },
+    "memory": {
+        "format": "  {used:0.1f}G",
+        "tooltip": true,
+        "interval": 3,
+        "tooltip-format": "RAM: {used:0.1f}GiB / {total:0.1f}GiB\nSwap: {swapUsed:0.1f}GiB / {swapTotal:0.1f}GiB"
+    },
 
-  "pulseaudio": {
-    "format": "  {volume}%",
-    "tooltip": true,
-    "format-muted": " Mute"
-  },
+    "pulseaudio": {
+        "format": "  {volume}%",
+        "tooltip": true,
+        "format-muted": " Mute"
+    },
 
-  "network": {
-    "format-wifi": "  {signalStrength}%",
-    "format-ethernet": "󰈀  {ifname}",
-    "format-disconnected": "  Offline",
-    "tooltip": true
-  }
+    "custom/clock-icon": {
+        "format": ""
+    },
+
+    "clock": {
+        "format": "{:%a %b %d | %I:%M:%S %p}",
+        "tooltip": true,
+        "interval": 1,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "format": {
+                "months": "<span color='#ffead3'><b>{}</b></span>",
+                "days": "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        }
+    }
 }

@@ -1,51 +1,52 @@
 window {
-margin: 0px;
-border: 1px solid #ebdbb2;
-background-color: #3c3836;
-}
-
-#input {
-margin: 5px;
-border: none;
-color: #f8f8f2;
-background-color: #44475a;
-}
-
-#inner-box {
-margin: 5px;
-border: none;
-background-color: #282a36;
+    margin: 0px;
+    border: 2px solid #e0e0e0;
+    background-color: #1a1a1a;
+    font-family: "Iosevka Nerd Font", monospace;
 }
 
 #outer-box {
-margin: 5px;
-border: none;
-background-color: #282a36;
+    margin: 20px;
+    background-color: transparent;
 }
 
-#scroll {
-margin: 0px;
-border: none;
+#input {
+    margin: -1000px;
+    border: none;
+    padding: 8px;
+    border: 2px solid #e0e0e0;
+    color: #e0e0e0;
+    background-color: transparent;
+    outline: none;
+    box-shadow: none;
+}
+
+#input image {
+    color: transparent;
+    background: none;
+    margin: 0;
+    padding: 0;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    color: #e0e0e0;
+    background-color: transparent;
 }
 
 #text {
-margin: 5px;
-border: none;
-color: #f8f8f2;
-}
-
-#entry.activatable #text {
-color: #282a36;
-}
-
-#entry > * {
-color: #f8f8f2;
+    margin: 5px;
+    color: #e0e0e0;
 }
 
 #entry:selected {
-background-color: #44475a;
+    border: none;
+    outline: none;
+    background-color: #3a3a3a;
 }
 
 #entry:selected #text {
-font-weight: bold;
+    color: #ffffff;
+    font-weight: bold;
 }
