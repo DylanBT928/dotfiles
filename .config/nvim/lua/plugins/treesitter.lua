@@ -32,3 +32,9 @@ vim.api.nvim_create_autocmd("FileType", {
         pcall(vim.treesitter.start, buf, lang)
     end,
 })
+
+require("nvim-treesitter.configs").setup({
+    indent = {
+        enable = false,
+    }
+})

@@ -18,6 +18,9 @@ vim.keymap.set("v", ">", ">gv", { desc = "indent and keep selection" })
 
 vim.keymap.set("n", "J", "mzJ`z", { desc = "join lines without moving cursor" })
 
+vim.keymap.set("n", "<leader>/", "gcc", { remap = true, desc = "toggle comment" })
+vim.keymap.set("v", "<leader>/", "gc", { remap = true, desc = "toggle comment" })
+
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "move down in buffer with cursor centered" })
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "move up in buffer with cursor centered" })
 

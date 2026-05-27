@@ -1,14 +1,17 @@
 local mini_surround = require("mini.surround")
 local mini_pick = require("mini.pick")
 local mini_extra = require("mini.extra")
+local mini_pairs = require("mini.pairs")
 local mini_cmdline = require("mini.cmdline")
 local mini_notify = require("mini.notify")
 local mini_completion = require("mini.completion")
 local mini_diff = require("mini.diff")
+local mini_hipatterns = require("mini.hipatterns")
 
 mini_surround.setup()
 mini_pick.setup()
 mini_extra.setup()
+mini_pairs.setup()
 
 mini_cmdline.setup({
     autocorrect = { enable = false }
@@ -44,6 +47,16 @@ mini_diff.setup({
     }
 })
 
+mini_hipatterns.setup({
+    highlighters = {
+        fixme = { pattern = "%f[%w]()FIXME()%f[%W]", group = "MiniHipatternsFixme" },
+        hack = { pattern = "%f[%w]()HACK()%f[%W]", group = "MiniHipatternsHack" },
+        todo = { pattern = "%f[%w]()TODO()%f[%W]", group = "MiniHipatternsTodo" },
+        note = { pattern = "%f[%w]()NOTE()%f[%W]", group = "MiniHipatternsNote" },
+        hex_color = mini_hipatterns.gen_highlighter.hex_color()
+    },
+})
+
 vim.keymap.set("n", ";s", function() mini_pick.builtin.files() end, { desc = "mini file picker" })
 vim.keymap.set("n", ";S", function() mini_pick.builtin.grep({ pattern = vim.fn.expand("<cword>") }) end,
     { desc = "grep word" })
@@ -55,4 +68,11 @@ vim.keymap.set("n", ";k", function() mini_extra.pickers.keymaps() end, { desc = 
 vim.keymap.set("i", "<Tab>", [[pumvisible() ? "\<C-n>" : "\<Tab>"]], { expr = true, desc = "next completion item" })
 vim.keymap.set("i", "<S-Tab>", [[pumvisible() ? "\<C-p>" : "\<S-Tab>"]],
     { expr = true, desc = "previous completion item" })
-vim.keymap.set("i", "<CR>", [[pumvisible() ? "\<C-y>" : "\<CR>"]], { expr = true, desc = "accept completion" })
+
+vim.keymap.set("i", "<CR>", function()
+    if vim.fn.pumvisible() ~= 0 and vim.fn.complete_info({ "selected" }).selected ~= -1 then
+        return "<C-y>"
+    end
+
+    return mini_pairs.cr()
+end, { expr = true, replace_keycodes = true, desc = "accept completion or pair enter" })
