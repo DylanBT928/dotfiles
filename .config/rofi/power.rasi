@@ -1,0 +1,59 @@
+* {
+    font: "FiraCode Nerd Font 36";
+    background-color: transparent;
+    surface: #1a1a1ae6;
+    surface-container-low: #262626;
+    primary: #3a3a3a;
+    on-surface-variant: #a4ada9;
+    on-primary: #ffffff;
+}
+
+configuration {
+    modi: "dmenu";
+    show-icons: false;
+}
+
+window {
+    width: 420px;
+    transparency: "real";
+    background-color: @surface;
+    border: 1px solid;
+    border-color: #3a3a3a;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+mainbox {
+    children: [ listview ];
+}
+
+listview {
+    columns: 3;
+    lines: 2;
+    spacing: 12px;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+}
+
+element {
+    padding: 28px;
+    border-radius: 6px;
+    background-color: @surface-container-low;
+    text-color: @on-surface-variant;
+    cursor: pointer;
+}
+
+element selected.normal {
+    background-color: @primary;
+    text-color: @on-primary;
+}
+
+element-text {
+    font: "FiraCode Nerd Font 36";
+    background-color: transparent;
+    text-color: inherit;
+    horizontal-align: 0.50;
+    vertical-align: 0.50;
+    cursor: inherit;
+}
