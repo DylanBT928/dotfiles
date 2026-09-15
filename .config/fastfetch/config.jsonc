@@ -20,7 +20,7 @@
         {
             "type": "title",
             "keyWidth": 10,
-			"format": ""
+            "format": ""
         },
         {
 
@@ -60,6 +60,6 @@
             "keyColor": "white"
 
         },
-		"break"
+        "break"
     ]
 }

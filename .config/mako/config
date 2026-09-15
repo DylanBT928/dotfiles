@@ -1,5 +1,4 @@
 sort=-time
-output=DP-1
 layer=overlay
 anchor=top-right
 background-color=#3c3836
