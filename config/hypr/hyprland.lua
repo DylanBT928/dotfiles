@@ -1,23 +1,4 @@
--- Refer to the wiki for more information.
--- https://wiki.hypr.land/Configuring/Start/
-
--- You can (and should!!) split this configuration into multiple files
--- Create your files separately and then require them like this:
--- require("myColors")
-
-
-------------------
----- MONITORS ----
-------------------
-
--- See https://wiki.hypr.land/Configuring/Basics/Monitors/
-hl.monitor({
-    output   = "eDP-1",
-    mode     = "1920x1200@60",
-    position = "0x0",
-    scale    = "1",
-})
-
+require("monitors")
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -27,8 +8,7 @@ hl.monitor({
 local terminal    = "kitty"
 local fileManager = "thunar"
 local menu        = "rofi -show drun"
-local powermenu   = "~/.config/hypr/scripts/powermenu.sh"
-local browser     = "helium-browser"
+local browser     = "helium"
 local discord     = "discord"
 local obsidian    = "obsidian"
 
@@ -261,9 +241,9 @@ hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + T", hl.dsp.exec_cmd(discord))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd(obsidian))
-hl.bind(mainMod .. " + L", hl.dsp.exec_cmd(powermenu))
--- hl.bind(mainMod .. " + L",
---     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + L",
+    hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.exec_cmd("poweroff"))
 local closeWindowBind = hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 -- closeWindowBind:set_enabled(false)
 
@@ -321,7 +301,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -- Screenshot
 hl.bind(mainMod .. " + SHIFT + S",
     hl.dsp.exec_cmd(
-    'grim -g "$(slurp -d)" - | tee ~/Pictures/Screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy'))
+    "grim -g '$(slurp -d)' - | tee ~/Pictures/Screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy"))
 
 
 --------------------------------

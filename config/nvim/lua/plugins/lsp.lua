@@ -1,22 +1,3 @@
-local mason = require("mason")
-local mason_installer = require("mason-tool-installer")
-
-mason.setup()
-
-mason_installer.setup({
-    ensure_installed = {
-        "lua-language-server",
-        "clangd",
-        "pyright",
-        "bash-language-server",
-        "json-lsp",
-        "marksman",
-        "neocmakelsp",
-    },
-    auto_update = false,
-    run_on_start = true,
-})
-
 vim.keymap.set("n", ";d", vim.lsp.buf.definition, { desc = "go to definition" })
 vim.keymap.set("n", ";f", vim.lsp.buf.format, { desc = "format current buffer" })
 vim.keymap.set("n", ";xl", vim.diagnostic.open_float, { desc = "Show line diagnostics" })
@@ -49,4 +30,5 @@ vim.lsp.enable({
     "jsonls",
     "marksman",
     "neocmake",
+    "nixd",
 })
