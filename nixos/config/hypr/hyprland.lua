@@ -1,4 +1,13 @@
-require("monitors")
+------------------
+---- MONITORS ----
+------------------
+
+hl.monitor({
+    output   = "eDP-1",
+    mode     = "1920x1200@60",
+    position = "0x0",
+    scale    = "1",
+})
 
 ---------------------
 ---- MY PROGRAMS ----
@@ -6,7 +15,7 @@ require("monitors")
 
 -- Set programs that you use
 local terminal    = "kitty"
-local fileManager = "thunar"
+local fileManager = "kitty -e yazi"
 local menu        = "rofi -show drun"
 local browser     = "helium"
 local discord     = "discord"
@@ -17,13 +26,9 @@ local obsidian    = "obsidian"
 ---- AUTOSTART ----
 -------------------
 
--- See https://wiki.hypr.land/Configuring/Basics/Autostart/
-
--- Autostart necessary processes (like notifications daemons, status bars, etc.)
--- Or execute your favorite apps at launch like this:
-
 hl.on("hyprland.start", function()
     hl.exec_cmd("waybar & hyprpaper & mako")
+    hl.exec_cmd("brightnessctl --device='*micmute*' set 0")
 end)
 
 
@@ -31,10 +36,10 @@ end)
 ---- ENVIRONMENT VARIABLES ----
 -------------------------------
 
--- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
-
 hl.env("XCURSOR_SIZE", "24")
+hl.env("XCURSOR_THEME", "Adwaita")
 hl.env("HYPRCURSOR_SIZE", "24")
+hl.env("HYPRCURSOR_THEME", "Adwaita")
 hl.env("GTK_THEME", "adw-gtk3-dark")
 
 
@@ -65,7 +70,7 @@ hl.env("GTK_THEME", "adw-gtk3-dark")
 hl.config({
     general = {
         gaps_in          = 5,
-        gaps_out         = 20,
+        gaps_out         = 10,
 
         border_size      = 1,
 
@@ -85,7 +90,7 @@ hl.config({
 
     decoration = {
         rounding         = 0,
-        rounding_power   = 2,
+        rounding_power   = 0,
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
@@ -301,7 +306,7 @@ hl.bind("XF86AudioPrev", hl.dsp.exec_cmd("playerctl previous"), { locked = true 
 -- Screenshot
 hl.bind(mainMod .. " + SHIFT + S",
     hl.dsp.exec_cmd(
-    "grim -g '$(slurp -d)' - | tee ~/Pictures/Screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy"))
+        'grim -g "$(slurp -d)" - | tee ~/Pictures/Screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy'))
 
 
 --------------------------------

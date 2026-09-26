@@ -30,13 +30,27 @@
   time.timeZone = "America/Los_Angeles";
 
   services.xserver.enable = false;
-  services.printing.enable = true;
+  services.displayManager.ly.enable = true;
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      cups-filters
+      cups-browsed
+    ];
+  };
   services.pulseaudio.enable = false;
   services.pipewire = {
     enable = true;
     pulse.enable = true;
   };
   services.libinput.enable = true;
+  services.udisks2.enable = true;
+  services.devmon.enable = true;
 
   users.users.dylanbt = {
     isNormalUser = true;
@@ -49,6 +63,7 @@
   };
   programs.firefox.enable = false;
   programs.nano.enable = false;
+  programs.dconf.enable = true;
   programs.ssh.startAgent = true;
 
   environment.systemPackages = with pkgs; [
@@ -86,6 +101,12 @@
     obsidian
     widevine-cdm
     lazygit
+    brightnessctl
+    mpv
+    yazi
+    zathura
+    adwaita-icon-theme
+    adw-gtk3
   ];
 
   fonts.packages = with pkgs; [

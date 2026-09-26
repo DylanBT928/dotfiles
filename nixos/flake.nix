@@ -16,12 +16,12 @@
   };
 
   outputs =
-    {
+    inputs@{
       self,
       nixpkgs,
       home-manager,
       ...
-    }@inputs:
+    }:
     {
       nixosConfigurations.icarus = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
