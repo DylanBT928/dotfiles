@@ -8,6 +8,18 @@ in
   home.homeDirectory = "/home/dylanbt";
   home.stateVersion = "26.05";
 
+  gtk = {
+    enable = true;
+    theme = {
+      name = "adw-gtk3-dark";
+      package = pkgs.adw-gtk3;
+    };
+    font = {
+      name = "Fira Code";
+      size = 12;
+    };
+  };
+
   home.file.".config/hypr".source = ./config/hypr;
   home.file.".config/waybar".source = ./config/waybar;
   home.file.".config/nvim".source = ./config/nvim;

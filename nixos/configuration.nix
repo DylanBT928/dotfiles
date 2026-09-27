@@ -109,10 +109,17 @@
     adw-gtk3
   ];
 
-  fonts.packages = with pkgs; [
-    fira-code
-    fira-code-symbols
-  ];
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      fira-code
+      fira-code-symbols
+    ];
+    fontconfig.defaultFonts = {
+      sansSerif = [ "Fira Code" ];
+      monospace = [ "Fira Code" ];
+    };
+  };
 
   system.stateVersion = "26.05";
 }
