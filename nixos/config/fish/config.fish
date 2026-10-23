@@ -1,5 +1,7 @@
 set fish_greeting ""
 
+set -gx EDITOR nvim
+
 if status is-interactive
     oh-my-posh init fish --config "/etc/nixos/config/fish/robbyrussell.omp.json" | source
 
@@ -9,4 +11,5 @@ if status is-interactive
     alias n='nvim'
     alias nrs='sudo nixos-rebuild switch'
     alias ff='fastfetch'
+
 end

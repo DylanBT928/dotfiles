@@ -15,6 +15,12 @@ vim.lsp.config("lua_ls", {
     },
 })
 
+vim.lsp.config("pyright", {
+    handlers = {
+        ["$/progress"] = function() end,
+    },
+})
+
 vim.diagnostic.config({
     virtual_text = true,
     signs = false,
@@ -31,4 +37,5 @@ vim.lsp.enable({
     "marksman",
     "neocmake",
     "nixd",
+    "ruff",
 })

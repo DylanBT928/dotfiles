@@ -26,6 +26,7 @@ in
   home.file.".config/kitty".source = ./config/kitty;
   home.file.".config/mako".source = ./config/mako;
   home.file.".config/fish".source = ./config/fish;
+  home.file.".config/zathura".source = ./config/zathura;
   home.file.".config/net.imput.helium/WidevineCdm/${widevineVer}".source =
     "${pkgs.widevine-cdm}/share/google/chrome/WidevineCdm";
   home.file.".config/net.imput.helium/WidevineCdm/manifest.json".source =

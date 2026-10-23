@@ -11,6 +11,11 @@
     ./hardware-configuration.nix
   ];
 
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = false;
+  };
+
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [
     "nix-command"
@@ -51,6 +56,7 @@
   services.libinput.enable = true;
   services.udisks2.enable = true;
   services.devmon.enable = true;
+  services.blueman.enable = true;
 
   users.users.dylanbt = {
     isNormalUser = true;
@@ -65,7 +71,16 @@
   programs.nano.enable = false;
   programs.dconf.enable = true;
   programs.ssh.startAgent = true;
+  programs.fish.enable = true;
+  programs.direnv = {
+    enable = true;
+    enableFishIntegration = true;
+    nix-direnv.enable = true;
+  };
 
+  environment.sessionVariables = {
+    NIX_REMOTE = "daemon";
+  };
   environment.systemPackages = with pkgs; [
     inputs.helium-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     bat
@@ -83,10 +98,10 @@
     wget
     rofi
     oh-my-posh
-    fish
     fastfetch
     tree-sitter
     gcc
+    gdb
     clang-tools
     pyright
     bash-language-server
@@ -107,6 +122,20 @@
     zathura
     adwaita-icon-theme
     adw-gtk3
+    conda
+    cmake
+    gnumake
+    valgrind
+    unzip
+    ruff
+    asciiquarium
+    nyancat
+    cl-wordle
+    platformio
+    direnv
+    nix-direnv
+    ponysay
+    bibata-cursors
   ];
 
   fonts = {
