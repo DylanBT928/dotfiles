@@ -38,7 +38,6 @@
                 users.dylanbt = ./home.nix;
               };
             }
-            { networking.hostName = "icarus"; }
           ];
         };
       };

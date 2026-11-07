@@ -8,8 +8,11 @@
 
 {
   imports = [
+    ./modules/audio.nix
     ./modules/bluetooth.nix
-    ./modules/services.nix
+    ./modules/display.nix
+    ./modules/print.nix
+    ./modules/storage.nix
     ./packages/fish.nix
     ./packages/man.nix
     ./packages/nano.nix
