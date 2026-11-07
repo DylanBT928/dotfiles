@@ -14,7 +14,7 @@
     shellAliases = {
       ls = "ls --color=auto";
       grep = "grep --color=auto";
-      nrs = "nh os switch";
+      nosi = "nh os switch -H icarus";
       n = "nvim";
       ff = "fastfetch";
     };

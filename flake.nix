@@ -23,20 +23,24 @@
       ...
     }:
     {
-      nixosConfigurations.icarus = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
-        modules = [
-          ./configuration.nix
-          home-manager.nixosModules.default
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.dylanbt = ./home.nix;
-            };
-          }
-        ];
+      nixosConfigurations = {
+        icarus = nixpkgs.lib.nixosSystem {
+          system = "x86_64-linux";
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/icarus/hardware-configuration.nix
+            ./common.nix
+            home-manager.nixosModules.default
+            {
+              home-manager = {
+                useGlobalPkgs = true;
+                useUserPackages = true;
+                users.dylanbt = ./home.nix;
+              };
+            }
+            { networking.hostName = "icarus"; }
+          ];
+        };
       };
     };
 }

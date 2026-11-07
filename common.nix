@@ -8,7 +8,6 @@
 
 {
   imports = [
-    ./hardware-configuration.nix
     ./modules/bluetooth.nix
     ./modules/security.nix
     ./modules/services.nix
@@ -72,7 +71,6 @@
     hyprlock
     wget
     rofi
-    oh-my-posh
     fastfetch
     tree-sitter
     gcc
