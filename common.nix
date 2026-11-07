@@ -10,9 +10,11 @@
   imports = [
     ./modules/audio.nix
     ./modules/bluetooth.nix
+    ./modules/boot.nix
     ./modules/display.nix
     ./modules/print.nix
     ./modules/storage.nix
+    ./packages/direnv.nix
     ./packages/fish.nix
     ./packages/man.nix
     ./packages/nano.nix
@@ -24,13 +26,6 @@
     "nix-command"
     "flakes"
   ];
-
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  boot.extraModprobeConfig = ''
-    options thinkpad_acpi fan_control=1
-  '';
 
   networking.hostName = "icarus";
   networking.networkmanager.enable = true;
@@ -48,15 +43,7 @@
   };
   programs.dconf.enable = true;
   programs.ssh.startAgent = true;
-  programs.direnv = {
-    enable = true;
-    enableFishIntegration = true;
-    nix-direnv.enable = true;
-  };
 
-  environment.sessionVariables = {
-    NIX_REMOTE = "daemon";
-  };
   environment.systemPackages = with pkgs; [
     inputs.helium-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
     bat
@@ -107,8 +94,6 @@
     nyancat
     cl-wordle
     platformio
-    direnv
-    nix-direnv
     ponysay
     bibata-cursors
     asmfmt
