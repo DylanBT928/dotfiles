@@ -1,20 +1,22 @@
 {
   config,
   lib,
-  pkgs,
   inputs,
+  pkgs,
   ...
 }:
 
 {
   imports = [
     ./hardware-configuration.nix
+    ./modules/bluetooth.nix
+    ./modules/security.nix
+    ./modules/services.nix
+    ./packages/fish.nix
+    ./packages/man.nix
+    ./packages/nano.nix
+    ./packages/nh.nix
   ];
-
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = false;
-  };
 
   nixpkgs.config.allowUnfree = true;
   nix.settings.experimental-features = [
@@ -34,30 +36,6 @@
 
   time.timeZone = "America/Los_Angeles";
 
-  services.xserver.enable = false;
-  services.displayManager.ly.enable = true;
-  services.avahi = {
-    enable = true;
-    nssmdns4 = true;
-    openFirewall = true;
-  };
-  services.printing = {
-    enable = true;
-    drivers = with pkgs; [
-      cups-filters
-      cups-browsed
-    ];
-  };
-  services.pulseaudio.enable = false;
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-  services.libinput.enable = true;
-  services.udisks2.enable = true;
-  services.devmon.enable = true;
-  services.blueman.enable = true;
-
   users.users.dylanbt = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
@@ -67,11 +45,8 @@
     enable = true;
     xwayland.enable = true;
   };
-  programs.firefox.enable = false;
-  programs.nano.enable = false;
   programs.dconf.enable = true;
   programs.ssh.startAgent = true;
-  programs.fish.enable = true;
   programs.direnv = {
     enable = true;
     enableFishIntegration = true;
@@ -136,6 +111,7 @@
     nix-direnv
     ponysay
     bibata-cursors
+    asmfmt
   ];
 
   fonts = {

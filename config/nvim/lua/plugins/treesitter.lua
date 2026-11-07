@@ -34,6 +34,9 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 require("nvim-treesitter.configs").setup({
+    highlight = {
+        enable = false,
+    },
     indent = {
         enable = false,
     }
