@@ -10,12 +10,16 @@
   services.udisks2.enable = true;
   services.devmon.enable = true;
   services.pulseaudio.enable = false;
-  services.fprintd.enable = true;
 
   services.avahi = {
     enable = true;
     nssmdns4 = true;
     openFirewall = true;
+  };
+
+  services.pipewire = {
+      enable = true;
+      pulse.enable = true;
   };
 
   services.printing = {
@@ -25,10 +29,4 @@
       cups-browsed
     ];
   };
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-  };
-
 }

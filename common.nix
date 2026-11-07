@@ -9,7 +9,6 @@
 {
   imports = [
     ./modules/bluetooth.nix
-    ./modules/security.nix
     ./modules/services.nix
     ./packages/fish.nix
     ./packages/man.nix

@@ -28,7 +28,7 @@
           system = "x86_64-linux";
           specialArgs = { inherit inputs; };
           modules = [
-            ./hosts/icarus/hardware-configuration.nix
+            ./hosts/icarus/default.nix
             ./common.nix
             home-manager.nixosModules.default
             {
