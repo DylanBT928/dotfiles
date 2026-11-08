@@ -4,6 +4,10 @@
 }:
 
 {
+  imports = [
+    ./packages/hyprland.nix
+  ];
+
   home.username = "dylanbt";
   home.homeDirectory = "/home/dylanbt";
   home.stateVersion = "26.05";
@@ -20,7 +24,6 @@
     };
   };
 
-  home.file.".config/hypr".source = ./config/hypr;
   home.file.".config/waybar".source = ./config/waybar;
   home.file.".config/nvim".source = ./config/nvim;
   home.file.".config/mako".source = ./config/mako;

@@ -20,6 +20,7 @@
     ./packages/man.nix
     ./packages/nano.nix
     ./packages/nh.nix
+    ./packages/steam.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -38,12 +39,13 @@
     extraGroups = [ "wheel" ];
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
   programs.dconf.enable = true;
   programs.ssh.startAgent = true;
+
+    environment.pathsToLink = [
+        "/share/applications"
+        "/share/xdg-desktop-portal"
+    ];
 
   environment.systemPackages = with pkgs; [
     inputs.helium-browser.packages.${pkgs.stdenv.hostPlatform.system}.default
@@ -55,9 +57,6 @@
     vim
     waybar
     git
-    hyprpaper
-    hyprshutdown
-    hyprlock
     wget
     rofi
     fastfetch
@@ -90,13 +89,13 @@
     valgrind
     unzip
     ruff
-    asciiquarium
     nyancat
     cl-wordle
     platformio
     ponysay
     bibata-cursors
     asmfmt
+    spotify
   ];
 
   fonts = {
