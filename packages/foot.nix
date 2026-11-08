@@ -12,7 +12,7 @@
         font = "FiraCode Nerd Font:size=12";
       };
       colors-dark = {
-        alpha = "0.8";
+        alpha = "0.9";
         blur = true;
       };
       scrollback = {
