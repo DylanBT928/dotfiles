@@ -195,6 +195,12 @@ in
         "${mainMod}, mouse:272, movewindow"
         "${mainMod}, mouse:273, resizewindow"
       ];
+      binde = [
+        "${mainMod} CONTROL, left, resizeactive, -20 0"
+        "${mainMod} CONTROL, right, resizeactive, 20 0"
+        "${mainMod} CONTROL, up, resizeactive, 0 -20"
+        "${mainMod} CONTROL, down, resizeactive, 0 20"
+      ];
       bindel = [
         ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
