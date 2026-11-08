@@ -13,6 +13,7 @@
       };
       colors-dark = {
         alpha = "0.8";
+        blur = true;
       };
       scrollback = {
         multiplier = "10.0";
