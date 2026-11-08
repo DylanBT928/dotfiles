@@ -16,6 +16,7 @@
     ./modules/storage.nix
     ./packages/direnv.nix
     ./packages/fish.nix
+    ./packages/foot.nix
     ./packages/man.nix
     ./packages/nano.nix
     ./packages/nh.nix
@@ -50,7 +51,6 @@
     btop
     discord
     tree
-    kitty
     neovim
     vim
     waybar
@@ -102,12 +102,11 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      fira-code
-      fira-code-symbols
+      nerd-fonts.fira-code
     ];
     fontconfig.defaultFonts = {
-      sansSerif = [ "Fira Code" ];
-      monospace = [ "Fira Code" ];
+      sansSerif = [ "FiraCode Nerd Font" ];
+      monospace = [ "FiraCode Nerd Font" ];
     };
   };
 

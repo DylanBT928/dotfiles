@@ -14,8 +14,8 @@ hl.monitor({
 ---------------------
 
 -- Set programs that you use
-local terminal    = "kitty"
-local fileManager = "kitty -e yazi"
+local terminal    = "foot"
+local fileManager = "foot -e yazi"
 local menu        = "rofi -show drun"
 local browser     = "helium"
 local discord     = "discord"
