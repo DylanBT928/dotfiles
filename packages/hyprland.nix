@@ -202,7 +202,7 @@ in
       ];
       bindl = [
         ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && (wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q MUTED && brightnessctl -d '*micmute*' set 1 || brightnessctl -d '*micmute*' set 0)"
       ];
       windowrule = [
         "match:class .*, suppress_event maximize"

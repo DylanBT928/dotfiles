@@ -44,7 +44,7 @@
         "tooltip-format": "RAM: {used:0.1f}GiB / {total:0.1f}GiB\nSwap: {swapUsed:0.1f}GiB / {swapTotal:0.1f}GiB"
     },
     "network": {
-        "format-wifi": "NET: {bandwidthTotalBits}%",
+        "format-wifi": "NET: {bandwidthTotalBits}",
         "format-ethernet": "NET: {bandwidthTotalBits}",
         "format-disconnected": "DISCONNECTED",
         "interval": 10,
