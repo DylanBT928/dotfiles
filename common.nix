@@ -70,14 +70,10 @@
     lua-language-server
     nixd
     nixfmt
-    grim
-    slurp
     mako
-    wl-clipboard
     obsidian
     widevine-cdm
     lazygit
-    brightnessctl
     mpv
     yazi
     zathura

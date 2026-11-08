@@ -18,7 +18,7 @@ in
       monitor = [
         "eDP-1,1920x1200@60,0x0,1"
         "DP-1,1920x1080@180,1920x0,1"
-        "HDMI-A-1,1920x1080@60,0x0,1"
+        "HDMI-A-1,1920x1080@75,0x0,1"
       ];
       exec-once = [
         "waybar & mako"
@@ -190,8 +190,35 @@ in
 
         "${mainMod} SHIFT, S, exec, grim -g \"$(slurp -d)\" - | tee ~/Pictures/Screenshots/screenshot_$(date +%Y-%m-%d_%H-%M-%S).png | wl-copy"
       ];
+      bindm = [
+        "${mainMod}, mouse:272, movewindow"
+        "${mainMod}, mouse:273, resizewindow"
+      ];
+      bindel = [
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl -e4 -n2 set 5%+"
+        ", XF86MonBrightnessDown, exec, brightnessctl -e4 -n2 set 5%-"
+      ];
+      bindl = [
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+      ];
+      windowrule = [
+        "match:class .*, suppress_event maximize"
+        "match:class ^$, match:title ^$, match:xwayland 1, match:float 1, match:fullscreen 0, match:pin 0, no_initial_focus on"
+        "match:class ^(hyprland-run)$, float on"
+        "match:class ^(hyprland-run)$, move 20 monitor_h-120"
+      ];
     };
   };
 
-  home.packages = [ pkgs.swaybg ];
+  home.packages = with pkgs; [
+    brightnessctl
+    grim
+    playerctl
+    slurp
+    swaybg
+    wl-clipboard
+  ];
 }
