@@ -13,6 +13,7 @@ in
 {
   wayland.windowManager.hyprland = {
     enable = true;
+    configType = "hyprlang";
     settings = {
       monitor = [
         "eDP-1,1920x1200@60,0x0,1"
@@ -20,7 +21,8 @@ in
         "HDMI-A-1,1920x1080@60,0x0,1"
       ];
       exec-once = [
-        "waybar & hyprpaper & mako"
+        "waybar & mako"
+        "swaybg -i /etc/nixos/assets/nvidia.png -m fill"
         "brightnessctl --device='*micmute*' set 0"
       ];
       env = [
@@ -113,10 +115,9 @@ in
           scroll_factor = 0.2;
         };
       };
-      gestures = {
-        workspace_swipe = true;
-        workspace_swipe_fingers = 3;
-      };
+      gesture = [
+        "3, horizontal, workspace"
+      ];
       device = [
         {
           name = "epic-mouse-v1";
@@ -132,7 +133,7 @@ in
         "${mainMod}, N, exec, obsidian"
         "${mainMod}, G, exec, steam"
         "${mainMod}, Delete, exit"
-        "${mainMod} SHIFT, Delete, exec, poweroff}"
+        "${mainMod} SHIFT, Delete, exec, poweroff"
 
         "${mainMod}, Q, killactive,"
         "${mainMod}, V, togglefloating,"
@@ -195,19 +196,5 @@ in
     };
   };
 
-  services.hyprpaper = {
-    enable = true;
-    settings = {
-      ipc = "on";
-      splash = false;
-      preload = [
-        /home/dylanbt/.config/hypr/wallpapers/nvidia.png
-      ];
-      wallpaper = [
-        "eDP-1,/home/dylanbt/.config/hypr/wallpapers/nvidia.png"
-        "DP-1,/home/dylanbt/.config/hypr/wallpapers/nvidia.png"
-        "HDMI-A-1,/home/dylanbt/.config/hypr/wallpapers/nvidia.png"
-      ];
-    };
-  };
+  home.packages = [ pkgs.swaybg ];
 }
