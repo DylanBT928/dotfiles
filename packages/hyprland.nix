@@ -222,4 +222,6 @@ in
     swaybg
     wl-clipboard
   ];
+
+  xdg.portal.config.common.default = "*";
 }
