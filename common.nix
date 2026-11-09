@@ -42,10 +42,10 @@
   programs.dconf.enable = true;
   programs.ssh.startAgent = true;
 
-    environment.pathsToLink = [
-        "/share/applications"
-        "/share/xdg-desktop-portal"
-    ];
+  environment.pathsToLink = [
+    "/share/applications"
+    "/share/xdg-desktop-portal"
+  ];
 
   environment.systemPackages = with pkgs; [
     inputs.helium-browser.packages.${pkgs.stdenv.hostPlatform.system}.default

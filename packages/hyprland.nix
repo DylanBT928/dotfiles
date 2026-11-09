@@ -196,6 +196,10 @@ in
         "${mainMod}, mouse:273, resizewindow"
       ];
       binde = [
+        "${mainMod} CONTROL, H, resizeactive, -20 0"
+        "${mainMod} CONTROL, L, resizeactive, 20 0"
+        "${mainMod} CONTROL, K, resizeactive, 0 -20"
+        "${mainMod} CONTROL, J, resizeactive, 0 20"
         "${mainMod} CONTROL, left, resizeactive, -20 0"
         "${mainMod} CONTROL, right, resizeactive, 20 0"
         "${mainMod} CONTROL, up, resizeactive, 0 -20"
