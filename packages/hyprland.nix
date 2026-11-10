@@ -23,7 +23,7 @@ in
       ];
       exec-once = [
         "waybar & mako"
-        "swaybg -i /etc/nixos/assets/nvidia.png -m fill"
+        "swaybg -i /etc/nixos/assets/super-cool-cat.jpg -m stretch"
         "brightnessctl --device='*micmute*' set 0"
       ];
       env = [
