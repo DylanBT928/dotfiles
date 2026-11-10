@@ -5,6 +5,7 @@
 
 {
   imports = [
+    ./packages/fastfetch.nix
     ./packages/hyprland.nix
   ];
 

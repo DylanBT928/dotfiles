@@ -59,7 +59,6 @@
     git
     wget
     rofi
-    fastfetch
     tree-sitter
     gcc
     gdb
