@@ -8,6 +8,7 @@
     ./packages/fastfetch.nix
     ./packages/hyprland.nix
     ./packages/yazi.nix
+    ./packages/zathura.nix
   ];
 
   home.username = "dylanbt";
@@ -29,7 +30,6 @@
   home.file.".config/waybar".source = ./config/waybar;
   home.file.".config/nvim".source = ./config/nvim;
   home.file.".config/mako".source = ./config/mako;
-  home.file.".config/zathura".source = ./config/zathura;
   home.file.".config/net.imput.helium/WidevineCdm/${pkgs.widevine-cdm.version}".source =
     "${pkgs.widevine-cdm}/share/google/chrome/WidevineCdm";
   home.file.".config/net.imput.helium/WidevineCdm/manifest.json".source =

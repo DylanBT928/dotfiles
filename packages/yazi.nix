@@ -23,6 +23,10 @@
             use = "pdf";
           }
           {
+            mime = "image/*";
+            use = "pdf";
+          }
+          {
             mime = "image/gif";
             use = "mpv";
           }
