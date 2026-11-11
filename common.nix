@@ -74,7 +74,6 @@
     widevine-cdm
     lazygit
     mpv
-    yazi
     zathura
     adwaita-icon-theme
     adw-gtk3

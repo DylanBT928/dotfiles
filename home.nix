@@ -7,6 +7,7 @@
   imports = [
     ./packages/fastfetch.nix
     ./packages/hyprland.nix
+    ./packages/yazi.nix
   ];
 
   home.username = "dylanbt";
