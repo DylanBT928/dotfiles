@@ -23,16 +23,20 @@
             use = "pdf";
           }
           {
-            mime = "image/*";
+            mime = "application/epub+zip";
             use = "pdf";
+          }
+          {
+            mime = "video/*";
+            use = "mpv";
           }
           {
             mime = "image/gif";
             use = "mpv";
           }
           {
-            mime = "video/*";
-            use = "mpv";
+            mime = "image/*";
+            use = "pdf";
           }
         ];
       };
