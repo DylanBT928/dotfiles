@@ -23,7 +23,7 @@ in
       ];
       exec-once = [
         "waybar & mako"
-        "swaybg -i /etc/nixos/assets/super-cool-cat.jpg -m stretch"
+        "swaybg -i /etc/nixos/assets/ascii-landscape.png -m stretch"
         "brightnessctl --device='*micmute*' set 0"
       ];
       env = [
