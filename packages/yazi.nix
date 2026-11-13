@@ -27,6 +27,10 @@
             use = "pdf";
           }
           {
+            url = "*.cbz";
+            use = "pdf";
+          }
+          {
             mime = "video/*";
             use = "mpv";
           }
