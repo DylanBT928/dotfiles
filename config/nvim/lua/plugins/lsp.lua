@@ -15,6 +15,13 @@ vim.lsp.config("lua_ls", {
     },
 })
 
+vim.lsp.config("clangd", {
+    cmd = {
+        "clangd",
+        "--compile-commands-dir=build",
+    },
+})
+
 vim.lsp.config("pyright", {
     handlers = {
         ["$/progress"] = function() end,
