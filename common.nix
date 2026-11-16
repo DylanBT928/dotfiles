@@ -55,7 +55,6 @@
     tree
     neovim
     vim
-    waybar
     git
     wget
     rofi
@@ -69,12 +68,10 @@
     lua-language-server
     nixd
     nixfmt
-    mako
     obsidian
     widevine-cdm
     lazygit
     mpv
-    adwaita-icon-theme
     adw-gtk3
     conda
     cmake
