@@ -6,7 +6,6 @@
     ./modules/desktop.nix
     ./modules/direnv.nix
     ./modules/display.nix
-    ./modules/fish.nix
     ./modules/fonts.nix
     ./modules/man.nix
     ./modules/nano.nix
