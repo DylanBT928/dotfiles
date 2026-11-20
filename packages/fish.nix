@@ -19,11 +19,13 @@
       n = "nvim";
       ff = "fastfetch";
     };
+    plugins = [
+      {
+        name = "pure";
+        src = pkgs.fishPlugins.pure.src;
+      }
+    ];
   };
 
-  environment.systemPackages = with pkgs; [
-    fishPlugins.pure
-  ];
-
-  environment.variables.EDITOR = "nvim";
+  home.sessionVariables.EDITOR = "nvim";
 }
