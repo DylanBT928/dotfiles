@@ -35,6 +35,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                extraSpecialArgs = { inherit inputs; };
                 users.dylanbt = ./home.nix;
               };
             }
@@ -51,6 +52,7 @@
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                extraSpecialArgs = { inherit inputs; };
                 users.dylanbt = ./home.nix;
               };
             }
