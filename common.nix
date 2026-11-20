@@ -11,9 +11,18 @@
     ./modules/audio.nix
     ./modules/bluetooth.nix
     ./modules/boot.nix
+    ./modules/desktop.nix
     ./modules/display.nix
+    ./modules/fish.nix
+    ./modules/fonts.nix
+    ./modules/networking.nix
+    ./modules/nix.nix
     ./modules/print.nix
+    ./modules/ssh.nix
     ./modules/storage.nix
+    ./modules/time.nix
+    ./modules/users.nix
+
     ./packages/direnv.nix
     ./packages/fish.nix
     ./packages/foot.nix
@@ -21,30 +30,6 @@
     ./packages/nano.nix
     ./packages/nh.nix
     ./packages/steam.nix
-  ];
-
-  nixpkgs.config.allowUnfree = true;
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
-
-  networking.hostName = "icarus";
-  networking.networkmanager.enable = true;
-
-  time.timeZone = "America/Los_Angeles";
-
-  users.users.dylanbt = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" ];
-  };
-
-  programs.dconf.enable = true;
-  programs.ssh.startAgent = true;
-
-  environment.pathsToLink = [
-    "/share/applications"
-    "/share/xdg-desktop-portal"
   ];
 
   environment.systemPackages = with pkgs; [
@@ -87,17 +72,6 @@
     asmfmt
     spotify
   ];
-
-  fonts = {
-    enableDefaultPackages = true;
-    packages = with pkgs; [
-      nerd-fonts.fira-code
-    ];
-    fontconfig.defaultFonts = {
-      sansSerif = [ "FiraCode Nerd Font" ];
-      monospace = [ "FiraCode Nerd Font" ];
-    };
-  };
 
   system.stateVersion = "26.05";
 }
