@@ -17,6 +17,7 @@
     ./modules/nano.nix
     ./modules/networking.nix
     ./modules/nh.nix
+    ./modules/nix-ld.nix
     ./modules/nix.nix
     ./modules/print.nix
     ./modules/ssh.nix
