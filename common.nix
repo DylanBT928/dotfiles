@@ -35,7 +35,6 @@
     vim
     git
     wget
-    rofi
     tree-sitter
     gcc
     gdb

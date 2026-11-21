@@ -8,6 +8,7 @@
     ./packages/hyprland.nix
     ./packages/mako.nix
     ./packages/nvim.nix
+    ./packages/rofi.nix
     ./packages/waybar.nix
     ./packages/yazi.nix
     ./packages/zathura.nix

@@ -8,6 +8,8 @@ let
   terminal = "foot";
   fileManager = "foot -e yazi";
   menu = "rofi -show drun";
+  calc = "rofi -show calc";
+  emoji = "rofi -show emoji";
   browser = "helium";
 in
 {
@@ -127,6 +129,8 @@ in
         "${mainMod}, D, exec, ${terminal}"
         "${mainMod}, E, exec, ${fileManager}"
         "${mainMod}, R, exec, ${menu}"
+        "${mainMod}, equal, exec, ${calc}"
+        "${mainMod}, semicolon, exec, ${emoji}"
         "${mainMod}, T, exec, discord"
         "${mainMod}, N, exec, obsidian"
         "${mainMod}, G, exec, steam"
