@@ -28,12 +28,13 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    discord
+    neovim
+    obsidian
+    spotify
     bat
     btop
-    discord
     tree
-    neovim
-    vim
     git
     wget
     tree-sitter
@@ -46,7 +47,6 @@
     lua-language-server
     nixd
     nixfmt
-    obsidian
     lazygit
     mpv
     adw-gtk3
@@ -61,7 +61,7 @@
     ponysay
     bibata-cursors
     asmfmt
-    spotify
+    asciiquarium
   ];
 
   system.stateVersion = "26.05";
