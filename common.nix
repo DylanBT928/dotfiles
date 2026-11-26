@@ -24,6 +24,7 @@
     ./modules/steam.nix
     ./modules/storage.nix
     ./modules/time.nix
+    ./modules/udev.nix
     ./modules/users.nix
   ];
 
