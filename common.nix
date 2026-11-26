@@ -34,7 +34,6 @@
     obsidian
     spotify
     bat
-    btop
     tree
     git
     wget

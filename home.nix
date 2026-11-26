@@ -1,5 +1,6 @@
 {
   imports = [
+    ./packages/btop.nix
     ./packages/fastfetch.nix
     ./packages/fish.nix
     ./packages/foot.nix
